@@ -33,5 +33,11 @@ RSpec.describe User, type: :model do
             expect(subject).to_not be_valid
         end
 
+        it 'if bio is longer than 150' do
+            subject.bio = "bio"* 100
+
+            expect(subject).to_not be_valid
+        end
+
     end
 end
