@@ -5,7 +5,7 @@ RSpec.describe Post, type: :model do
     @user = User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
     @post = Post.create(author: @user, title: 'Hello', text: 'This is my first post')
   end
-  
+
   it 'Post should have valid attributes' do
     expect(@post).to be_valid
   end
@@ -15,7 +15,7 @@ RSpec.describe Post, type: :model do
       Comment.create do |comment|
         comment.post = @post
         comment.author = @user
-        comment.text = "Hi Tom!"
+        comment.text = 'Hi Tom!'
       end
     end
     @comment = @post.recent_five_comments

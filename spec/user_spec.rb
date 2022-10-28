@@ -16,8 +16,8 @@ RSpec.describe User, type: :model do
       6.times do
         Post.create do |post|
           post.author = @user
-          post.title = "This is post title"
-          post.text = "This is post text"
+          post.title = 'This is post title'
+          post.text = 'This is post text'
         end
       end
       post = @user.recent_three_posts

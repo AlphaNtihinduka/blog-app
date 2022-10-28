@@ -35,7 +35,7 @@ RSpec.describe Comment, type: :model do
       Comment.create do |comment|
         comment.post = @post
         comment.author = @user
-        comment.text = "Hi Tom!"
+        comment.text = 'Hi Tom!'
       end
     end
     expect(@post.comments_counter).to eq 7
