@@ -12,7 +12,7 @@ RSpec.describe User, type: :model do
       expect(@user).to_not be_valid
     end
 
-    it 'comments_counter should be to be updated' do
+    it 'The recent three posts for the user should be returned' do
       6.times do
         Post.create do |post|
           post.author = @user
