@@ -1,42 +1,55 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.') }
-  before { subject.save }
+  before(:each) do
+    @user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+  end
 
   context 'Test the user validations' do
     it 'name should be present' do
-      subject.name = nil
+      @user.name = nil
 
-      expect(subject).to_not be_valid
+      expect(@user).to_not be_valid
+    end
+
+    it 'comments_counter should be to be updated' do
+      6.times do
+        Post.create do |post|
+          post.author = @user
+          post.title = "This is post title"
+          post.text = "This is post text"
+        end
+      end
+      post = @user.recent_three_posts
+      expect(post.length).to eq 3
     end
 
     it 'posts_counter should return an integer greater than or equal to 0' do
-      subject.posts_counter = 0
-      expect(subject).to be_valid
+      @user.posts_counter = 0
+      expect(@user).to be_valid
     end
 
     it 'posts_counter must be an integer' do
-      subject.posts_counter = 'abc'
-      expect(subject).to_not be_valid
+      @user.posts_counter = 'abc'
+      expect(@user).to_not be_valid
     end
 
     it 'photo should be present' do
-      subject.photo = nil
+      @user.photo = nil
 
-      expect(subject).to_not be_valid
+      expect(@user).to_not be_valid
     end
 
     it 'bio should be present' do
-      subject.bio = nil
+      @user.bio = nil
 
-      expect(subject).to_not be_valid
+      expect(@user).to_not be_valid
     end
 
     it 'if bio is longer than 150' do
-      subject.bio = 'bio' * 100
+      @user.bio = 'bio' * 100
 
-      expect(subject).to_not be_valid
+      expect(@user).to_not be_valid
     end
   end
 end
