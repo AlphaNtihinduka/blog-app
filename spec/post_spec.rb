@@ -10,6 +10,18 @@ RSpec.describe Post, type: :model do
     expect(@post).to be_valid
   end
 
+  it 'The recent five comments for each post should be returned' do
+    7.times do
+      Comment.create do |comment|
+        comment.post = @post
+        comment.author = @user
+        comment.text = "Hi Tom!"
+      end
+    end
+    @comment = @post.recent_five_comments
+    expect(@comment.size).to eq 5
+  end
+
   it 'The author should be present' do
     @post.author = nil
     expect(@post).to_not be_valid
