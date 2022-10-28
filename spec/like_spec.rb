@@ -7,8 +7,8 @@ RSpec.describe Like, type: :model do
     @like = Like.create(post: @post, author: @user)
   end
 
-  context 'Test comment methods' do
-    it 'After create the like, the post.likes_counter has to be updated' do
+  context 'Test Likes methods' do
+    it 'The likes counter has to be updated' do
       6.times do
         Like.create do |like|
           like.post = @post
