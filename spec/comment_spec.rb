@@ -29,4 +29,15 @@ RSpec.describe Comment, type: :model do
     @comment.text = nil
     expect(@comment).to_not be_valid
   end
+
+  it 'comments_counter should be to be updated' do
+    6.times do
+      Comment.create do |comment|
+        comment.post = @post
+        comment.author = @user
+        comment.text = "Hi Tom!"
+      end
+    end
+    expect(@post.comments_counter).to eq 7
+  end
 end
