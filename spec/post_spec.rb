@@ -13,5 +13,33 @@ RSpec.describe Post, type: :model do
     expect(post).to_not be_valid
   end
 
- 
+  it 'The title should be present' do
+    post.title = nil
+    expect(post).to_not be_valid
+  end
+
+  it 'The title should not exceed 250 characters' do
+    post.title = "Title" * 100
+    expect(post).to_not be_valid
+  end
+
+  it 'The comments counter should be greater than zero' do
+    post.comments_counter = 0
+    expect(post).to be_valid
+  end
+
+  it 'comments_counter should be an integer' do
+    post.comments_counter = 'a'
+    expect(post).to_not be_valid
+  end
+
+  it 'The likes counter should be greater than zero' do
+    post.likes_counter = 0
+    expect(post).to be_valid
+  end
+
+  it 'likes_counter should be an integer' do
+    post.comments_counter = 'abc'
+    expect(post).to_not be_valid
+  end
 end
