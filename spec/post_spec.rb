@@ -23,7 +23,7 @@ RSpec.describe Post, type: :model do
     expect(post).to_not be_valid
   end
 
-  it 'The comments counter should be greater than zero' do
+  it 'The comments counter should be equal to zero' do
     post.comments_counter = 0
     expect(post).to be_valid
   end
@@ -33,7 +33,7 @@ RSpec.describe Post, type: :model do
     expect(post).to_not be_valid
   end
 
-  it 'The likes counter should be greater than zero' do
+  it 'The likes counter should be equal zero' do
     post.likes_counter = 0
     expect(post).to be_valid
   end
