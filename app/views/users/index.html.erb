@@ -1,0 +1,22 @@
+<h1>Listing all the Users <h1>
+
+<div class="body">
+    <% @users.each do |user| %>
+    <div class="user_info">
+        <div class="img_container">
+            <%= image_tag user.photo, class:"user_image" %>
+        </div>
+
+        <div class="user_post">
+            <div class="user_name">
+                <%= user.name %>
+            </div>
+
+            <div class="post_count">
+            <%= user.posts_counter %>
+            </div>
+        </div>
+    </div>
+
+    <% end %>
+</div>
