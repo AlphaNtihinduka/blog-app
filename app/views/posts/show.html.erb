@@ -1,7 +1,8 @@
 <h1>All comments for the post</h1>
 
 <div class="wrapper">
-    <span>post <%= @post.id %> by:</span>
+    <span>post <%= @post.id %> by: </span>
+    <span>post <%= @user.name %></span>
     <p><%= @post.title %></p>
 </div>
 <% @comments.each do |comment| %>
