@@ -20,7 +20,7 @@
         <div class="post_wrapper">
             <% @posts.each_with_index do |post, index| %>
                 <div class="posts_container">
-                    <p class="post_number">post: <%= index+1 %></p>
+                    <p class="post_number">post<%= post.id %></p>
                     <p class="post_number"><%= post.title %></p>
                     <div>
                         <span>comments: <%= post.comments_counter %></span>
