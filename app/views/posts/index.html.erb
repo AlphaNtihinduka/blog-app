@@ -31,6 +31,7 @@
                     <% post.recent_five_comments.each do |comment| %>
                         
                         <div class="user_comment">
+                            <span class="comment_text"><%= @user.name %>: </span>
                             <span class="comment_text"><%= comment.text %></span>
                         </div>
                     <% end %>
