@@ -18,7 +18,7 @@
         <p class=user_bio><%= @user.bio %></p>
 
         <div class="post_wrapper">
-            <% @user.posts.each_with_index do |post, index| %>
+            <% @posts.each_with_index do |post, index| %>
                 <div class="posts_container">
                     <p class="post_number">post: <%= index+1 %></p>
                     <p class="post_number"><%= post.title %></p>
