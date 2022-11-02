@@ -5,3 +5,37 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+first_user_seed = User.create(
+  name: 'Tom',
+  photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+  bio: 'Teacher from Mexico.'
+)
+
+first_post_seed = Post.create(
+  author: first_user_seed,
+  title: 'First post by first user',
+  text: 'This is my first post'
+)
+User.create(
+  name: 'Alpha',
+  photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+  bio: 'Teacher from Uganda.'
+)
+Post.create(
+  author: first_user_seed,
+  title: 'Second post by first user',
+  text: 'This is my second post'
+)
+
+Comment.create(
+  post: first_post_seed,
+  author: first_user_seed,
+  text: 'Hi Tom!'
+)
+7.times do |i|
+  Comment.create(
+    post: first_post_seed,
+    author: first_user_seed,
+    text: "Hi Tom! #{i + 1}"
+  )
+end
