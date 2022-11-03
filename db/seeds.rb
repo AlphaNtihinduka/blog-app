@@ -29,13 +29,13 @@ second_post_seed = Post.create(
   text: 'This is my first post'
 )
 
-third_post_seed = Post.create(
+Post.create(
   author: second_user_seed,
   title: 'third post by second user and i am Elvis',
   text: 'This is my third post'
 )
 
-forth_post_seed = Post.create(
+Post.create(
   author: first_user_seed,
   title: 'forth post by second user and i am Elvis',
   text: 'This is my third post'
@@ -68,7 +68,7 @@ Post.create(
   Post.create(
     author: first_user_seed,
     title: 'Second post by first user',
-    text: "This is my post #{i+1}"
+    text: "This is my post #{i + 1}"
   )
 end
 
@@ -76,7 +76,7 @@ end
   Post.create(
     author: second_user_seed,
     title: 'Second post by second user Who is Elvis',
-    text: "This is my  post #{i+1}"
+    text: "This is my  post #{i + 1}"
   )
 end
 
