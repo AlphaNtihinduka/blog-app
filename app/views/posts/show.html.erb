@@ -1,15 +1,19 @@
 <h1>All comments for the post</h1>
 
-<div class="wrapper">
+<div class="post_user_wrapper">
     <span>post <%= @post.id %> by: </span>
     <span>post <%= @user.name %></span>
     <p><%= @post.title %></p>
-    <div>
-        <span>Comments counter: <%= @post.comments_counter %></span>
+    <div class="likes_comments_post">
+        <span>Comments counter: <%= @post.comments_counter %>,</span>
         <span>Likes_counter: <%= @post.likes_counter %></span>
-    </div>
-    
+    </div> 
 </div>
-<% @comments.each do |comment| %>
-    <%= comment.text %>
-<% end %>
+
+<div class="post_comments_wrapper">
+    <% @comments.each do |comment| %>
+            <div class="post_comments">
+                <%= comment.text %>
+            <div>  
+    <% end %>
+ <div>
