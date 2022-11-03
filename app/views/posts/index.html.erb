@@ -20,12 +20,14 @@
         <div class="post_wrapper">
             <% @posts.each_with_index do |post, index| %>
                 <div class="posts_container">
+                <%= link_to user_post_path(@user, post) do %>
                     <p class="post_number">post<%= post.id %></p>
                     <p class="post_number"><%= post.title %></p>
                     <div>
                         <span>comments: <%= post.comments_counter %></span>
                         <span>likes: <%= post.likes_counter %></span>
                     </div>
+                    <% end %>
                 <div>
                 <div class="comment">
                     <% post.recent_five_comments.each do |comment| %>
