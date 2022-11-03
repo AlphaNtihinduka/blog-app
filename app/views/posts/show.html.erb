@@ -4,6 +4,11 @@
     <span>post <%= @post.id %> by: </span>
     <span>post <%= @user.name %></span>
     <p><%= @post.title %></p>
+    <div>
+        <span>Comments counter: <%= @post.comments_counter %></span>
+        <span>Likes_counter: <%= @post.likes_counter %></span>
+    </div>
+    
 </div>
 <% @comments.each do |comment| %>
     <%= comment.text %>
