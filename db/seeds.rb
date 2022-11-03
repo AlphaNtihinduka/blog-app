@@ -73,7 +73,7 @@ end
 13.times do |i|
   Comment.create(
     post: second_post_seed,
-    author: first_user_seed,
+    author: second_user_seed,
     text: "Hi Elvis my comment ! #{i + 1}"
   )
 end
