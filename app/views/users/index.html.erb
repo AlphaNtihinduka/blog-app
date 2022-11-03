@@ -2,7 +2,6 @@
 
 <div class="body">
     <% @users.each do |user| %>
-
         <div class="user_info">
          <%= link_to user do %>
             <div class="img_container">
@@ -13,7 +12,6 @@
                 <div class="user_name">
                     Username: <%= user.name %>
                 </div>
-
                 <div class="post_count">
                 Number of posts: <%= user.posts_counter %>
                 </div>
