@@ -7,13 +7,13 @@
 #   Character.create(name: "Luke", movie: movies.first)
 first_user_seed = User.create(
   name: 'Tom',
-  photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+  photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
   bio: 'Teacher from Mexico.'
 )
 
 second_user_seed = User.create(
   name: 'Elvis',
-  photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+  photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
   bio: 'Elvis is from Argentina and loves working with ruby on rails.'
 )
 
@@ -31,7 +31,7 @@ second_post_seed = Post.create(
 
 User.create(
   name: 'Alpha',
-  photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+  photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
   bio: 'Teacher from Uganda.'
 )
 Post.create(
