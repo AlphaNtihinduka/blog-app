@@ -2,8 +2,9 @@
 
 <div class="body">
     <% @users.each do |user| %>
-        <div class="user_info">
+        <div class="user_wrapper">
          <%= link_to user do %>
+            <div class="user_info">
             <div class="img_container">
                 <%= image_tag user.photo, class:"user_image" %>
             </div>
@@ -15,6 +16,7 @@
                 <div class="post_count">
                 Number of posts: <%= user.posts_counter %>
                 </div>
+            </div>
             </div>
             <% end %>
         </div>
