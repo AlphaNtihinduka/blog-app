@@ -15,20 +15,25 @@
             </div>
         </div>
 
-        <p class=user_bio><%= @user.bio %></p>
+        <div class="user_bio">
+        <p>Bio</p>
+        <p><%= @user.bio %></p>
+       
+       </div>
 
-        <div class="post_wrapper">
+        <div class="post_container">
             <% @posts.each_with_index do |post, index| %>
-                <div class="posts_container">
-                <%= link_to user_post_path(@user, post) do %>
-                    <p class="post_number">post<%= post.id %></p>
-                    <p class="post_number"><%= post.title %></p>
-                    <div>
-                        <span>comments: <%= post.comments_counter %></span>
-                        <span>likes: <%= post.likes_counter %></span>
+                <div class="post_comment_wrapper">
+                    <%= link_to user_post_path(@user, post) do %>
+                    <div class="posts_wrapper">
+                        <p class="post_number">post<%= post.id %></p>
+                        <p class="post_number"><%= post.title %></p>
+                        <div>
+                            <span>comments: <%= post.comments_counter %></span>
+                            <span>likes: <%= post.likes_counter %></span>
+                        </div>
                     </div>
                     <% end %>
-                <div>
                 <div class="comment">
                     <% post.recent_five_comments.each do |comment| %>
 
@@ -38,6 +43,7 @@
                         </div>
                     <% end %>
                 </div>
+            </div>
             <% end %>
         </div>
 </div>
