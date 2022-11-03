@@ -11,11 +11,24 @@ first_user_seed = User.create(
   bio: 'Teacher from Mexico.'
 )
 
+second_user_seed = User.create(
+  name: 'Elvis',
+  photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+  bio: 'Elvis is from Argentina and loves working with ruby on rails.'
+)
+
 first_post_seed = Post.create(
   author: first_user_seed,
   title: 'First post by first user',
   text: 'This is my first post'
 )
+
+second_post_seed = Post.create(
+  author: second_user_seed,
+  title: 'First post by second user and i am Elvis',
+  text: 'This is my first post'
+)
+
 User.create(
   name: 'Alpha',
   photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
@@ -27,15 +40,40 @@ Post.create(
   text: 'This is my second post'
 )
 
+12.times do |i|
+  Post.create(
+    author: first_user_seed,
+    title: 'Second post by first user',
+    text: "This is my post #{i+1}"
+  )
+end
+
+8.times do |i|
+  Post.create(
+    author: second_user_seed,
+    title: 'Second post by second user Who is Elvis',
+    text: "This is my  post #{i+1}"
+  )
+end
+
 Comment.create(
   post: first_post_seed,
   author: first_user_seed,
   text: 'Hi Tom!'
 )
-7.times do |i|
+
+10.times do |i|
   Comment.create(
     post: first_post_seed,
     author: first_user_seed,
     text: "Hi Tom! #{i + 1}"
+  )
+end
+
+13.times do |i|
+  Comment.create(
+    post: second_post_seed,
+    author: first_user_seed,
+    text: "Hi Elvis my comment ! #{i + 1}"
   )
 end
