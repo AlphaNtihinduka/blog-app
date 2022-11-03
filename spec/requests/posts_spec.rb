@@ -1,9 +1,9 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
-  describe "GET #index" do
-    before(:example) { get '/users/:id/posts'}
-    it "returns a 200 OK status" do
+  describe 'GET #index' do
+    before(:example) { get '/users/:id/posts' }
+    it 'returns a 200 OK status' do
       expect(response).to have_http_status(:ok)
     end
 
@@ -16,18 +16,18 @@ RSpec.describe 'Posts', type: :request do
     end
   end
 
-  describe "GET #show" do
-  before(:example) { get '/users/:id/posts/:id'}
-  it "returns a 200 OK status" do
-    expect(response).to have_http_status(:ok)
-  end
+  describe 'GET #show' do
+    before(:example) { get '/users/:id/posts/:id' }
+    it 'returns a 200 OK status' do
+      expect(response).to have_http_status(:ok)
+    end
 
-  it 'Is correct template rendered' do
-    expect(response).to render_template('show')
-  end
+    it 'Is correct template rendered' do
+      expect(response).to render_template('show')
+    end
 
-  it 'Is the body includes correct text' do
-    expect(response.body).to include('All comments for the post')
+    it 'Is the body includes correct text' do
+      expect(response.body).to include('All comments for the post')
+    end
   end
-end
 end
