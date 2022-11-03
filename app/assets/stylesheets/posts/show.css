@@ -1,0 +1,18 @@
+.post_user_wrapper {
+    border: solid 0.1rem grey;
+    margin-bottom: 1rem;
+    position: relative;
+    padding: 0.5rem;
+}
+
+.likes_comments_post {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.9rem;
+    color: gray;
+}
+
+.post_comments_wrapper {
+    border: solid 0.1rem grey;
+}

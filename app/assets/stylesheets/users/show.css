@@ -1,0 +1,28 @@
+.user_bio {
+    border: solid 0.1rem grey;
+    padding: 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+.post_wrapper {
+    border: solid 0.1rem grey;
+    font-size: 1.4rem;
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+.comments_likes {
+    position: absolute;
+    right: 1rem;
+    bottom: 0.5rem;
+    font-size: 1rem;
+    color: grey;
+}
+
+.see-all-posts {
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    background-color: green;
+    padding: 0.5rem;
+}

@@ -1,1 +1,49 @@
 <h1>Posts for selected user</h1>
+
+<div class="body">
+        <div class="user_info">
+            <div class="img_container">
+                <%= image_tag @user.photo, class:"user_image" %>
+            </div>
+            <div class="user_post">
+                <div class="user_name">
+                    Username: <%= @user.name %>
+                </div>
+                <div class="post_count">
+                Number of posts: <%= @user.posts_counter %>
+                </div>
+            </div>
+        </div>
+
+        <div class="user_bio">
+        <p>Bio</p>
+        <p><%= @user.bio %></p>
+       
+       </div>
+
+        <div class="post_container">
+            <% @posts.each_with_index do |post, index| %>
+                <div class="post_comment_wrapper">
+                    <%= link_to user_post_path(@user, post) do %>
+                    <div class="posts_wrapper">
+                        <p class="post_number">post<%= post.id %></p>
+                        <p class="post_number"><%= post.title %></p>
+                        <div>
+                            <span>comments: <%= post.comments_counter %></span>
+                            <span>likes: <%= post.likes_counter %></span>
+                        </div>
+                    </div>
+                    <% end %>
+                <div class="comment">
+                    <% post.recent_five_comments.each do |comment| %>
+
+                        <div class="user_comment">
+                            <span class="comment_text"><%= @user.name %>: </span>
+                            <span class="comment_text"><%= comment.text %></span>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+            <% end %>
+        </div>
+</div>
