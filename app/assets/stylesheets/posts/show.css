@@ -16,3 +16,7 @@
 .post_comments_wrapper {
     border: solid 0.1rem grey;
 }
+
+.add_comment_wrapper {
+    margin-top: 2rem;
+}
