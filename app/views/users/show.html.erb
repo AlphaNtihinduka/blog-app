@@ -1,6 +1,9 @@
 <h1>Listing all the Posts <h1>
 
 <div class="body">
+<%= link_to new_user_post_path(@user), class: "link" do %>
+    <button type="button" class="see-all-posts-button">Create new post</button>
+<% end %>
         <div class="user_info">
             <div class="img_container">
                 <%= image_tag @user.photo, class:"user_image" %>
@@ -28,6 +31,7 @@
                     <div class="post_wrapper">
                     <p class="post_number">post: <%= post.id %></p>
                     <p class="post_number"><%= post.title %></p>
+                    <p class="post_number"><%= post.text %></p>
                     <div class='comments_likes'>
                         <span>comments: <%= post.comments_counter %></span>
                         <span>likes: <%= post.likes_counter %></span>

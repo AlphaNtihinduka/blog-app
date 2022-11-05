@@ -8,6 +8,9 @@
         <span>Comments counter: <%= @post.comments_counter %>,</span>
         <span>Likes_counter: <%= @post.likes_counter %></span>
     </div> 
+    <div class='add_like_wrapper'>
+        <%= render "likes/like" %>
+    </div>
 </div>
 
 <div class="post_comments_wrapper">
@@ -18,3 +21,8 @@
             <div>  
     <% end %>
  <div>
+
+<div class='add_comment_wrapper'>
+ <%= render "comments/form" %>
+</div>
+
