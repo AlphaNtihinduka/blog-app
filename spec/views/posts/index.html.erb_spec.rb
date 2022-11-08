@@ -38,5 +38,10 @@ RSpec.describe 'User pages', type: :system do
         image = page.all('img')
         expect(image.size).to eq(1)
       end
+
+      it 'shows linking' do
+        click_link('First post by first user')
+        expect(page).to have_content('Comment')
+      end
     end
   end
