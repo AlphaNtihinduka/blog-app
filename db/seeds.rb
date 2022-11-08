@@ -29,7 +29,6 @@ Post.create(
   text: 'This is my first post'
 )
 
-
 Post.create(
   author: User.first,
   title: 'third post by second user and i am Elvis',
@@ -48,7 +47,6 @@ Post.create(
   text: 'This is my second post'
 )
 
-
 Comment.create(
   post: Post.first,
   author: User.first,
@@ -60,8 +58,6 @@ Comment.create(
   author: User.first,
   text: 'Hi Elvis!'
 )
-
-
 
 # 12.times do |i|
 #   Post.create(

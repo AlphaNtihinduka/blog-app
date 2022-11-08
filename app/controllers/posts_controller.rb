@@ -8,9 +8,9 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comments = @post.comments.includes([:author])
     @user = @post.author
-    rescue ActiveRecord::RecordNotFound
+  rescue ActiveRecord::RecordNotFound
     render file: 'public/404.html', status: :not_found
-  end 
+  end
 
   def new
     @post = Post.new
