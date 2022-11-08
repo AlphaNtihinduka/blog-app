@@ -22,7 +22,17 @@ RSpec.describe 'User pages', type: :system do
 
       it 'shows first username' do
         expect(page).to have_content('Like')
-      end      
+      end     
+      
+        it 'shows number of posts for the username' do
+        expect(page).to have_content('Number of posts: 3')
+      end
+
+      it 'shows number of comments and likes for the first post' do
+        expect(page).to have_content('comments: 2 likes: 0')
+      end
+
+   
 
     
     end
