@@ -81,13 +81,21 @@ $ rspec ./spec/#{filename}_spec.rb
 
 Kindly modify the files as needed.
 
-## Author
+## Author 1
 
 **Ntihinduka Alpha**
 
 - GitHub: [githubhandle](https://github.com/AlphaNtihinduka)
 - Twitter: [twitterhandle](https://twitter.com/@alphantihinduka)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/ntihinduka-alpha-81bb7b22a/)
+
+## Author 2
+
+**Odinko Ijeoma**
+
+- GitHub: [ijeomaodinko](https://github.com/ijeomaodinko)
+- Twitter: [Iodinko](https://twitter.com/@Iodinko)
+- LinkedIn: [ijeomaodinko](https://www.linkedin.com/in/ijeomaodinko/)
 
 ## 🤝 Contributing
 
