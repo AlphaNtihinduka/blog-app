@@ -14,7 +14,7 @@
 </div>
 
 <div class="post_comments_wrapper">
-    <% @comments.each do |comment| %>
+    <% @comments.includes(:author).each do |comment| %>
             <div class="post_comments">
                 <span><%= comment.author.name %>: </span>
                 <span><%= comment.text %></span>
