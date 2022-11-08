@@ -5,10 +5,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @user = User.includes(:posts).find(params[:user_id])
-    @post = Post.includes(:comments).find(params[:user_id])
-    @comments = Comment.where(post_id: @post.id).includes(:author)
-  end
+    @post = Post.find(params[:id])
+    @comments = @post.comments.includes([:author])
+    @user = @post.author
+    rescue ActiveRecord::RecordNotFound
+    render file: 'public/404.html', status: :not_found
+  end 
 
   def new
     @post = Post.new
