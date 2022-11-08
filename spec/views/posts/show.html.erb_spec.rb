@@ -16,7 +16,7 @@ RSpec.describe 'User pages', type: :system do
     describe 'show page' do
         let(:author) { User.first.id }
         subject(:post) { Post.first.id }
-        before(:example) do
+        before(:each) do
           visit user_post_path(author, post)
         end
 
