@@ -32,7 +32,19 @@ RSpec.describe 'User pages', type: :system do
         expect(page).to have_content('comments: 2 likes: 0')
       end
 
-   
+       it 'shows create new post button' do
+        expect(page).to have_content('Create new post')
+      end
+
+      it 'shows the profile picture of the user' do
+        image = page.all('img')
+        expect(image.size).to eq(1)
+      end
+
+      it 'redirects to the posts page when clicking on the username' do
+        click_link('See all posts')
+        expect(page).to have_content('Bio')
+      end
 
     
     end
