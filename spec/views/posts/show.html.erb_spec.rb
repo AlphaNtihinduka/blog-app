@@ -15,10 +15,10 @@ RSpec.describe 'User pages', type: :system do
         before(:each) do
           visit user_post_path(author, post)
         end
-      it 'shows first Like button' do
+      it 'shows first post Like button' do
         expect(page).to have_content('Like')
       end
-      it 'shows first Like button' do
+      it 'shows the comment on the page' do
         expect(page).to have_content('Comment')
       end
       it 'shows the comments counter' do
@@ -27,7 +27,7 @@ RSpec.describe 'User pages', type: :system do
       it 'shows the likes counter' do
         expect(page).to have_content('Likes_counter: 0')
       end
-      it 'shows create new post button' do
+      it 'shows the comment content' do
         expect(page).to have_content('Tom: Hi Elvis!')
       end
     end
