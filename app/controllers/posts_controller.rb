@@ -1,13 +1,15 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = Post.where(author_id: @user.id)
+    @posts = Post.where(author_id: @user.id).includes(:comments)
   end
 
   def show
-    @user = User.find(params[:user_id])
-    @post = Post.find(params[:user_id])
-    @comments = Comment.where(post_id: @post.id)
+    @post = Post.find(params[:id])
+    @comments = @post.comments.includes([:author])
+    @user = @post.author
+  rescue ActiveRecord::RecordNotFound
+    render file: 'public/404.html', status: :not_found
   end
 
   def new
