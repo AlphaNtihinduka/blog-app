@@ -6,7 +6,12 @@
          <%= link_to user do %>
             <div class="user_info">
             <div class="img_container">
-                <%= image_tag user.photo, class:"user_image" %>
+            <% if user.photo.nil? %>
+            <%= image_tag "https://bit.ly/3WU8Zoi", class:"user_image"%>
+          <% else %>
+          <%= image_tag user.photo, class:"user_image" %>
+          <% end %>
+                
             </div>
 
             <div class="user_post">
