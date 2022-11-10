@@ -3,7 +3,11 @@
 <div class="body">
         <div class="user_info">
             <div class="img_container">
+            <% if @user.photo.nil? %>
+            <%= image_tag "https://bit.ly/3WU8Zoi", class:"user_image"%>
+          <% else %>
                 <%= image_tag @user.photo, class:"user_image" %>
+                <% end %>
             </div>
             <div class="user_post">
                 <div class="user_name">
