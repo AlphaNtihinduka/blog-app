@@ -17,6 +17,15 @@ User.create(
   bio: 'Elvis is from Argentina and loves working with ruby on rails.'
 )
 
+User.create (
+name: "NTIHINDUKA ALPHA", 
+photo: nil, 
+bio: nil, 
+email: "ntihindukaalpha@yahoo.com", 
+role: "admin"
+)
+
+
 Post.create(
   author: User.first,
   title: 'First post by first user',
