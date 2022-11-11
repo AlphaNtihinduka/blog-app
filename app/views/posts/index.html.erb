@@ -1,3 +1,4 @@
+
 <h1>Posts for selected user</h1>
 
 <div class="body">
@@ -38,6 +39,11 @@
                         </div>
                     </div>
                     <% end %>
+                    <% if can? :destroy, post %>
+            <%= form_with model: post, url: user_post_path(@user, post), method: :delete do |form| %>
+              <%= form.submit "Delete Post", class: "delete-button" %>
+            <% end %>
+          <% end %>
                 <div class="comment">
                     <% post.recent_five_comments.each do |comment| %>
 
