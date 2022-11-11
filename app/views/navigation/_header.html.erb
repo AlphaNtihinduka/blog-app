@@ -1,0 +1,24 @@
+
+<nav class="nav_bar">
+  <a href="/" class="nav_bar__logo">Blog App</a>
+  <ul class="nav_bar__links">
+    <% if user_signed_in? %>
+      <li>
+        <%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: false }, class: "nav_bar__btn" %>
+      </li>
+      <li>
+        <%= link_to 'Edit', edit_user_registration_path, class: "nav_bar__link" %>
+      </li>
+      <li>
+        <%= current_user.name %>
+      </li>
+      <% else %>
+      <li>
+        <%= link_to 'Register', new_user_registration_path, class: "nav_bar__link" %>
+      </li>
+      <li>
+        <%= link_to 'Sign in', new_user_session_path, class: "nav_bar__link" %>
+      </li>
+    <% end %>
+  </ul>
+</nav>
