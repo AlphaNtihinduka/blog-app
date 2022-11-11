@@ -13,6 +13,11 @@
         <%= render "likes/like" %>
     </div>
 </div>
+<% if can? :destroy, @post %>
+            <%= form_with model: @post, url: user_post_path(@user, @post), method: :delete do |form| %>
+              <%= form.submit "Delete Post", class: "delete-button" %>
+            <% end %>
+          <% end %>
 
 <div class="post_comments_wrapper">
     <% @comments.includes(:author).each do |comment| %>
